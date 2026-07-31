@@ -4,7 +4,7 @@ Aplicação Next.js da CAF para pesquisa de assistências, administração da ba
 
 ## Situação do ambiente
 
-O projeto Supabase `eomfqwpzrgvaabrszryc` já recebeu as migrações e os dados. A publicação da aplicação **não deve executar `supabase db push` novamente**.
+O projeto Supabase `` já recebeu as migrações e os dados. A publicação da aplicação **não deve executar `supabase db push` novamente**.
 
 A publicação foi dividida em três responsabilidades:
 
