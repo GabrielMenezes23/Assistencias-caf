@@ -17,7 +17,7 @@ jobs:
       - run: npm install
       - run: npm run deploy:check
         env:
-          NEXT_PUBLIC_SUPABASE_URL: https://eomfqwpzrgvaabrszryc.supabase.co
+          NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
           NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ci-placeholder-publishable-key
           NEXT_PUBLIC_OSM_MAP_ENABLED: "true"
           NEXT_PUBLIC_DEMO_MODE: "true"
