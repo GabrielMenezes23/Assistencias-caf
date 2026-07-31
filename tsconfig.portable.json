@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": ".portable-dist",
+    "rootDir": "src",
+    "rewriteRelativeImportExtensions": true
+  },
+  "include": [
+    "src/lib/domain/**/*.ts",
+    "src/lib/search/format-answer.ts",
+    "src/lib/imports/csv.ts",
+    "src/lib/imports/normalize-row.ts",
+    "src/lib/imports/preview.ts",
+    "src/lib/sales/**/*.ts",
+    "src/lib/assistances/contact.ts"
+  ]
+}

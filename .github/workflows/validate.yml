@@ -1,0 +1,79 @@
+name: Validar aplicação
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CI: 'true'
+  NEXT_TELEMETRY_DISABLED: '1'
+  NEXT_PUBLIC_DEMO_MODE: 'true'
+  NEXT_PUBLIC_OSM_MAP_ENABLED: 'true'
+  NEXT_PUBLIC_SUPABASE_URL: 'https://example.supabase.co'
+  NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: 'ci-placeholder-key'
+  GEOCODER_PROVIDER: 'municipality'
+
+jobs:
+  build-linux:
+    name: Testes e build (Linux/Vercel)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Instalar dependências reproduzíveis
+        run: npm ci
+
+      - name: Testes
+        run: npm run test
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Verificação de tipos
+        run: npm run typecheck
+
+      - name: Build de produção
+        run: npm run build
+
+  smoke-windows:
+    name: Testes portáteis (Windows)
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Instalar dependências reproduzíveis
+        run: npm ci
+
+      - name: Testes e tipagem
+        shell: pwsh
+        run: |
+          npm run test
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          npm run typecheck
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

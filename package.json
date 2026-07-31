@@ -1,0 +1,41 @@
+{
+  "name": "caf-console-multiagente-web",
+  "version": "0.5.5",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "test": "npm run test:portable",
+    "test:portable": "node scripts/run-portable-tests.mjs",
+    "verify": "node scripts/verify-project.mjs",
+    "typecheck": "tsc --noEmit",
+    "verify:portable": "node scripts/run-portable-tests.mjs && node scripts/verify-project.mjs",
+    "check": "npm run test && npm run lint && npm run typecheck && npm run build",
+    "ci": "npm run check"
+  },
+  "dependencies": {
+    "@supabase/ssr": "0.12.3",
+    "@supabase/supabase-js": "2.110.8",
+    "next": "16.2.12",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "read-excel-file": "9.3.4",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "eslint": "^9.32.0",
+    "eslint-config-next": "16.2.12",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "description": "Console web determinístico da CAF para Assistências e Vendas, com Supabase/PostGIS e Vercel.",
+  "packageManager": "npm@10.9.8"
+}

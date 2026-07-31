@@ -1,0 +1,87 @@
+{
+  "source": "Mentor_IA_CAF.md seção 31",
+  "currency": "BRL",
+  "reseller_levels": {
+    "consumer": {
+      "discount_percent": 0,
+      "price_source": "consumer_final"
+    },
+    "general": {
+      "discount_percent": 20,
+      "price_source": "base_table"
+    },
+    "bronze": {
+      "discount_percent": 27,
+      "price_source": "base_table"
+    },
+    "silver": {
+      "discount_percent": 30,
+      "price_source": "base_table"
+    },
+    "gold": {
+      "discount_percent": 32,
+      "price_source": "base_table"
+    }
+  },
+  "payment_terms": {
+    "cash": {
+      "discount_percent": 5,
+      "surcharge_percent": 0
+    },
+    "20_40_days": {
+      "discount_percent": 3,
+      "surcharge_percent": 0
+    },
+    "30_60_90_days": {
+      "discount_percent": 0,
+      "surcharge_percent": 0
+    },
+    "30_60_90_120_days": {
+      "discount_percent": 0,
+      "surcharge_percent": 1
+    }
+  },
+  "fob_pickup_discount_percent": 1.5,
+  "state_discount_percent": {
+    "AC": 3,
+    "AL": 3,
+    "AP": 3,
+    "AM": 5,
+    "BA": 3,
+    "CE": 3,
+    "DF": 2,
+    "ES": 2,
+    "GO": 2,
+    "MA": 2,
+    "MT": 2,
+    "MS": 2,
+    "MG": 0,
+    "PA": 3,
+    "PB": 3,
+    "PR": 0,
+    "PE": 3,
+    "PI": 3,
+    "RJ": 0,
+    "RN": 3,
+    "RS": 0,
+    "RO": 3,
+    "RR": 3,
+    "SC": 0,
+    "SP": 0,
+    "SE": 3,
+    "TO": 3
+  },
+  "calculation_order": [
+    "base_price",
+    "reseller_level",
+    "payment_term",
+    "state_discount",
+    "fob_pickup",
+    "minimum_price_guard"
+  ],
+  "hard_rules": [
+    "Do not calculate reseller price without base_table_price.",
+    "Do not invent price, stock, freight, lead time or discount.",
+    "Every calculated price requires human validation before closing."
+  ]
+}

@@ -1,0 +1,2 @@
+nome,cidade,uf,endereco,bairro,cep,telefone,emails,cnpj,status,alerta,observacoes,ativo,latitude,longitude
+Assistência Exemplo,Campinas,SP,"Rua Exemplo, 100",Centro,13000-000,"(19) 99999-9999","contato@exemplo.com.br",00.000.000/0001-00,NORMAL,,Cadastro de exemplo,SIM,,
