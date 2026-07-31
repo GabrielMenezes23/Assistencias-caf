@@ -2,10 +2,11 @@ node_modules/
 .next/
 out/
 .vercel/
-.env
-.env.local
-.env.*.local
+
+# Nunca versionar arquivos reais de ambiente.
+.env*
 !.env.example
+
 .portable-dist/
 __pycache__/
 *.pyc
