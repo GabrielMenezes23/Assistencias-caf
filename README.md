@@ -221,6 +221,10 @@ As variáveis de ambiente devem ser configuradas diretamente no painel da Vercel
 
 ---
 
-<p align="center">
-  Desenvolvido para apoiar as operações de assistência técnica e vendas da CAF.
-</p>
+<div align="center">
+
+Desenvolvido para apoiar as operações de **assistência técnica** da CAF.
+
+**Responsável:** Gabriel Menezes
+
+</div>
